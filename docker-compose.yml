@@ -7,9 +7,9 @@ services:
     container_name: website1
     ports:
       - "8081:80"
-    volume:
+    volumes:  
       - ./Amazon-clone:/app
-    network:
+    networks:  
       - my_network
     depends_on:
       - website2
@@ -22,13 +22,13 @@ services:
       - "8082:80"
     volumes:
       - ./Amazon-clone:/app
-    networks:
+    networks:  
       - my_network
 
-volume:
+volumes:  
   my_volume:
     driver: local
 
-network:
+networks:  
   my_network:
     driver: bridge
